@@ -15,8 +15,18 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    // it('should return "Hello World!"', () => {
-    //   expect(appController.getHello()).toBe('Hello World!');
-    // });
+    it('should return "result": true, "total": 1000, "amount": 100', () => {
+      const query = {
+        bill: 1000,
+        people: 1,
+        tipPercent: 10,
+      };
+      const result = JSON.stringify({
+        result: true,
+        total: 1100,
+        amount: 100,
+      });
+      expect(appController.getResult(query)).toBe(result);
+    });
   });
 });
